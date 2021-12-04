@@ -9,8 +9,6 @@
     ],
     "require": {
         "dompdf/dompdf": "^1.1",
-        "intervention/image": "^2.7",
-        "imagine/imagine": "^1.2",
         "nesbot/carbon": "^2.55"
     }
 }
