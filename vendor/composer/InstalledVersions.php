@@ -32,7 +32,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '89fad17fdc44bdb5275c97e838c6a25a66803828',
+    'reference' => '5552be6bea41c0d88871193638b9f71e4bad5c81',
     'name' => 'amir/change-host',
   ),
   'versions' => 
@@ -44,7 +44,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '89fad17fdc44bdb5275c97e838c6a25a66803828',
+      'reference' => '5552be6bea41c0d88871193638b9f71e4bad5c81',
     ),
     'dompdf/dompdf' => 
     array (

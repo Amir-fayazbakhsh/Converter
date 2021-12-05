@@ -1,4 +1,6 @@
 <?php
+require 'vendor/autoload.php';
+use Dompdf\Dompdf;
 interface text {
 	public function output();
 	public function value($data);
@@ -20,14 +22,24 @@ class Html implements text {
 
 class Pdf implements text {
 	public $data;
+	public $pdf;
 	public function value($data) {
 		$this->data = $data;
 	}
 	public function proccess() {
+		// instantiate and use the dompdf class
+			$this->pdf = new Dompdf();
+			$this->pdf->loadHtml($this->data);
 
+			// (Optional) Setup the paper size and orientation
+			$this->pdf->setPaper('A4', 'landscape');
+
+			// Render the HTML as PDF
+			$this->pdf->render();
 	}
 	public function output() {
-		return "PDF  " . $this->data;
+		// Output the generated PDF to Browser
+		$this->pdf->stream();
 	}
 }
 
@@ -52,8 +64,12 @@ class fileManagment {
 		return $this->type->output();
 	}
 }
-$data = "is our type";
-$file = new fileManagment(new Html(), $data);
-$file->proccess();
-echo $file->output();
+
+if(isset($_POST['btn'])){
+	
+	$file = new fileManagment(new Pdf(), $_POST['text']);
+	$file->proccess();
+	return  $file->output();
+}
+
 ?>
