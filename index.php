@@ -7,7 +7,7 @@
     <meta name="author" content="">
     <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <title>Signin Template for Bootstrap</title>
+    <title>Convert Text To Pdf</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sign-in/">
 
@@ -18,14 +18,21 @@
   </head>
 
   <body class="text-center">
-    <form action="txt.php" method="post">
-        <div class="form-group">
-            <textarea name="text" class="form-controll p-5" col="15" row="15">
+    <div class="d-flex justify-content-center mt-5 p-5">
+      <form action="getData.php" method="post">
+          <div class="form-group">
+              <textarea name="text" class="form-controll p-3" cols="55" rows="10" placeholder="Give me your text">
 
-            </textarea>
-        </div>
-      <button class="btn btn-lg btn-primary btn-block" name="btn" type="submit">get</button>
+              </textarea>
+          </div>
+           <div class="form-check">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" value="Pdf" name="optradio">PDF File
+            </label>
+          </div>
+        <button class="btn btn-primary btn-block mt-2" name="btn" type="submit">Get File</button>
 
-    </form>
+      </form>
+    </div>
   </body>
 </html>
