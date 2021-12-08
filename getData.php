@@ -28,14 +28,13 @@ if (isset($_POST['btn'])) {
 
 	if (!isset($_POST['optradio'])) {
 		header("location:index.php");
-	}
+	} else {
+		$outType = $_POST['optradio'];
+		$objType = new $outType;
 
-	$outType = $_POST['optradio'];
-	$objType = new $outType;
-
-	$file = new fileManagment($objType, $_POST['text']);
-	$file->proccess();
-	return $file->output();
+		$file = new fileManagment($objType, $_POST['text']);
+		$file->proccess();
+		return $file->output();}
 
 }
 ?>
