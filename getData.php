@@ -26,25 +26,16 @@ class fileManagment {
 
 if (isset($_POST['btn'])) {
 
-	if (empty($_POST['text'])) {
-		$error = "field is empty!!";
-		header("location:index.php");
-	}
-
 	if (!isset($_POST['optradio'])) {
-
-		$error = "Choose something";
 		header("location:index.php");
-
 	}
 
-	if ($error == '') {
-		$outType = $_POST['optradio'];
-		$objType = new $outType;
+	$outType = $_POST['optradio'];
+	$objType = new $outType;
 
-		$file = new fileManagment($objType, $_POST['text']);
-		$file->proccess();
-		return $file->output();
-	}
+	$file = new fileManagment($objType, $_POST['text']);
+	$file->proccess();
+	return $file->output();
+
 }
 ?>
